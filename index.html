@@ -3,90 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astro Love & Compatibility Matcher ✨</title>
+    <title>Cosmic Crush & Love Matcher 💘</title>
     <link rel="stylesheet" href="style.css">
     <!-- Library for Feature 20: Downloadable Match Card -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
-    <div class="calculator-container">
-        <h1>Astro Match 💖✨</h1>
-        <p>Discover your cosmic & spiritual compatibility</p>
+    <!-- Animated Floating Background Elements -->
+    <div class="bg-sparkles" aria-hidden="true">
+        <span>💖</span><span>✨</span><span>💘</span><span>🌸</span>
+        <span>✨</span><span>💕</span><span>🌙</span><span>💖</span>
+    </div>
 
-        <div class="input-section">
+    <div class="calculator-container">
+        <div class="trust-badge">✨ Verified Vedic & Western Astro Engine</div>
+        <h1>Crush & Love Matcher 💘</h1>
+        <p class="subtitle">See what the universe says about you and your crush</p>
+
+        <div class="input-grid">
             <!-- YOUR DETAILS -->
-            <div class="partner-card">
+            <div class="crush-card">
+                <div class="card-tag">You ✨</div>
                 <h3>Your Details</h3>
-                <input type="text" id="yourName" placeholder="Your Name" autocomplete="off">
-                <input type="date" id="yourDob">
-                <select id="yourReligion">
-                    <option value="" disabled selected>Select Your Religion</option>
-                    <option value="Hindu">Hindu</option>
-                    <option value="Muslim">Muslim</option>
-                    <option value="Christian">Christian</option>
-                    <option value="Sikh">Sikh</option>
-                    <option value="Jain">Jain</option>
-                    <option value="Buddhist">Buddhist</option>
-                    <option value="Spiritual / Other">Spiritual / Other</option>
-                </select>
+                <div class="field-group">
+                    <label for="yourName">Your Name</label>
+                    <input type="text" id="yourName" placeholder="Enter your full name" autocomplete="off">
+                </div>
+                <div class="field-group">
+                    <label for="yourDob">Your Birth Date</label>
+                    <input type="date" id="yourDob">
+                </div>
+                <div class="field-group">
+                    <label for="yourReligion">Your Religion / Path</label>
+                    <select id="yourReligion">
+                        <option value="" disabled selected>Select Your Religion</option>
+                        <option value="Hindu">Hindu</option>
+                        <option value="Muslim">Muslim</option>
+                        <option value="Christian">Christian</option>
+                        <option value="Sikh">Sikh</option>
+                        <option value="Jain">Jain</option>
+                        <option value="Buddhist">Buddhist</option>
+                        <option value="Spiritual / Other">Spiritual / Other</option>
+                    </select>
+                </div>
             </div>
 
-            <span class="plus-icon">+</span>
+            <!-- ANIMATED HEART DIVIDER -->
+            <div class="heart-divider">
+                <div class="pulse-circle">💘</div>
+            </div>
 
-            <!-- PARTNER DETAILS -->
-            <div class="partner-card">
-                <h3>Partner's Details</h3>
-                <input type="text" id="crushName" placeholder="Partner's Name" autocomplete="off">
-                <input type="date" id="crushDob">
-                <select id="crushReligion">
-                    <option value="" disabled selected>Select Partner's Religion</option>
-                    <option value="Hindu">Hindu</option>
-                    <option value="Muslim">Muslim</option>
-                    <option value="Christian">Christian</option>
-                    <option value="Sikh">Sikh</option>
-                    <option value="Jain">Jain</option>
-                    <option value="Buddhist">Buddhist</option>
-                    <option value="Spiritual / Other">Spiritual / Other</option>
-                </select>
+            <!-- CRUSH'S DETAILS -->
+            <div class="crush-card crush-highlight">
+                <div class="card-tag crush-tag">Your Crush 😍</div>
+                <h3>Crush's Details</h3>
+                <div class="field-group">
+                    <label for="crushName">Crush's Name</label>
+                    <input type="text" id="crushName" placeholder="Enter your crush's name" autocomplete="off">
+                </div>
+                <div class="field-group">
+                    <label for="crushDob">Crush's Birth Date</label>
+                    <input type="date" id="crushDob">
+                </div>
+                <div class="field-group">
+                    <label for="crushReligion">Crush's Religion / Path</label>
+                    <select id="crushReligion">
+                        <option value="" disabled selected>Select Crush's Religion</option>
+                        <option value="Hindu">Hindu</option>
+                        <option value="Muslim">Muslim</option>
+                        <option value="Christian">Christian</option>
+                        <option value="Sikh">Sikh</option>
+                        <option value="Jain">Jain</option>
+                        <option value="Buddhist">Buddhist</option>
+                        <option value="Spiritual / Other">Spiritual / Other</option>
+                    </select>
+                </div>
             </div>
         </div>
 
-        <button id="calculateBtn">Calculate Cosmic Compatibility ✨</button>
+        <button id="calculateBtn" class="primary-btn">
+            <span>Reveal Our Crush Destiny 💘</span>
+        </button>
+
+        <!-- ANIMATED LOADING STATE -->
+        <div id="loading-box" class="loading-box hidden">
+            <div class="cosmic-spinner">💖</div>
+            <p id="loading-text">Reading birth charts & star alignments...</p>
+        </div>
 
         <!-- FEATURE 20: SHAREABLE MATCH CARD -->
-        <div id="result-wrapper" class="hidden" style="display: none;">
+        <div id="result-wrapper" class="hidden">
             <div id="result-box" class="match-card">
-                <div class="card-header">✨ COSMIC MATCH REPORT ✨</div>
+                <div class="card-header">✨ OFFICIAL CRUSH DESTINY REPORT ✨</div>
                 <h3 id="couple-names"></h3>
-                <h2 id="percentage"></h2>
-                <p id="message"></p>
+                
+                <div class="score-ring">
+                    <h2 id="percentage">0%</h2>
+                    <span class="score-label">Soul Compatibility</span>
+                </div>
+
+                <p id="message" class="hope-message"></p>
 
                 <div class="astro-details">
                     <div class="astro-row">
-                        <span>🪧 <strong>Sun Signs:</strong></span>
-                        <span id="sun-signs"></span>
+                        <span class="row-label">🪧 Sun Signs</span>
+                        <span id="sun-signs" class="row-val"></span>
                     </div>
                     <div class="astro-row">
-                        <span>🔥 <strong>Elemental Harmony:</strong></span>
-                        <span id="element-harmony"></span>
+                        <span class="row-label">🔥 Elemental Vibe</span>
+                        <span id="element-harmony" class="row-val"></span>
                     </div>
                     <div class="astro-row">
-                        <span>🪐 <strong>Ruling Planets:</strong></span>
-                        <span id="planet-synergy"></span>
+                        <span class="row-label">🪐 Ruling Planets</span>
+                        <span id="planet-synergy" class="row-val"></span>
                     </div>
                     <div class="astro-row">
-                        <span>🌙 <strong>Naam Rashi (Name Sign):</strong></span>
-                        <span id="naam-rashi"></span>
+                        <span class="row-label">🌙 Naam Rashi</span>
+                        <span id="naam-rashi" class="row-val"></span>
                     </div>
                     <div class="astro-row">
-                        <span>🕊️ <strong>Spiritual Synergy:</strong></span>
-                        <span id="religion-synergy"></span>
+                        <span class="row-label">🕊️ Heart & Values</span>
+                        <span id="religion-synergy" class="row-val"></span>
                     </div>
                 </div>
-                <div class="card-footer">Matched via Astro Love Calculator 💖</div>
+
+                <!-- RELATIONSHIP & CRUSH ADVICE SECTION -->
+                <div class="advice-box">
+                    <div class="advice-title">💡 Future Love & Crush Advice</div>
+                    <p id="relationship-advice"></p>
+                </div>
+
+                <div class="card-footer">Verified by Cosmic Crush Matcher 💖</div>
             </div>
 
-            <button id="downloadBtn" class="download-btn">📸 Download Match Card</button>
+            <button id="downloadBtn" class="download-btn">📸 Save & Share Match Card</button>
         </div>
     </div>
 
