@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astro Love & Compatibility Matcher ✨</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Library for Feature 20: Downloadable Match Card -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>Astro Match 💖✨</h1>
+        <p>Discover your cosmic & spiritual compatibility</p>
+
+        <div class="input-section">
+            <!-- YOUR DETAILS -->
+            <div class="partner-card">
+                <h3>Your Details</h3>
+                <input type="text" id="yourName" placeholder="Your Name" autocomplete="off">
+                <input type="date" id="yourDob">
+                <select id="yourReligion">
+                    <option value="" disabled selected>Select Your Religion</option>
+                    <option value="Hindu">Hindu</option>
+                    <option value="Muslim">Muslim</option>
+                    <option value="Christian">Christian</option>
+                    <option value="Sikh">Sikh</option>
+                    <option value="Jain">Jain</option>
+                    <option value="Buddhist">Buddhist</option>
+                    <option value="Spiritual / Other">Spiritual / Other</option>
+                </select>
+            </div>
+
+            <span class="plus-icon">+</span>
+
+            <!-- PARTNER DETAILS -->
+            <div class="partner-card">
+                <h3>Partner's Details</h3>
+                <input type="text" id="crushName" placeholder="Partner's Name" autocomplete="off">
+                <input type="date" id="crushDob">
+                <select id="crushReligion">
+                    <option value="" disabled selected>Select Partner's Religion</option>
+                    <option value="Hindu">Hindu</option>
+                    <option value="Muslim">Muslim</option>
+                    <option value="Christian">Christian</option>
+                    <option value="Sikh">Sikh</option>
+                    <option value="Jain">Jain</option>
+                    <option value="Buddhist">Buddhist</option>
+                    <option value="Spiritual / Other">Spiritual / Other</option>
+                </select>
+            </div>
+        </div>
+
+        <button id="calculateBtn">Calculate Cosmic Compatibility ✨</button>
+
+        <!-- FEATURE 20: SHAREABLE MATCH CARD -->
+        <div id="result-wrapper" class="hidden" style="display: none;">
+            <div id="result-box" class="match-card">
+                <div class="card-header">✨ COSMIC MATCH REPORT ✨</div>
+                <h3 id="couple-names"></h3>
+                <h2 id="percentage"></h2>
+                <p id="message"></p>
+
+                <div class="astro-details">
+                    <div class="astro-row">
+                        <span>🪧 <strong>Sun Signs:</strong></span>
+                        <span id="sun-signs"></span>
+                    </div>
+                    <div class="astro-row">
+                        <span>🔥 <strong>Elemental Harmony:</strong></span>
+                        <span id="element-harmony"></span>
+                    </div>
+                    <div class="astro-row">
+                        <span>🪐 <strong>Ruling Planets:</strong></span>
+                        <span id="planet-synergy"></span>
+                    </div>
+                    <div class="astro-row">
+                        <span>🌙 <strong>Naam Rashi (Name Sign):</strong></span>
+                        <span id="naam-rashi"></span>
+                    </div>
+                    <div class="astro-row">
+                        <span>🕊️ <strong>Spiritual Synergy:</strong></span>
+                        <span id="religion-synergy"></span>
+                    </div>
+                </div>
+                <div class="card-footer">Matched via Astro Love Calculator 💖</div>
+            </div>
+
+            <button id="downloadBtn" class="download-btn">📸 Download Match Card</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
